@@ -17,6 +17,14 @@
 npm install -g @angular/cli
 ```
 
+### Install material
+
+[material.angular.io](https://material.angular.io/)
+
+```bash
+ng add @angular/material
+```
+
 ### This project
 
 ... was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
