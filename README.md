@@ -10,20 +10,19 @@
 
 [devcontainer.json](.devcontainer/devcontainer.json)
 
-### Install angular
+### Install angular and core dependencies
 
 ```bash
 # yarn global add @angular/cli # This didnt work had to run the below with a --force after
 npm install -g @angular/cli
-```
-
-### Install material
-
-[material.angular.io](https://material.angular.io/)
-
-```bash
 ng add @angular/material
+ng add @angular/pwa
 ```
+
+To read
+
+- [material.angular.io](https://material.angular.io/)
+- [progressive web app](https://angular.io/guide/service-worker-intro)
 
 ### This project
 
