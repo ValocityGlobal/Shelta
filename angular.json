@@ -127,6 +127,7 @@
   },
   "defaultProject": "Handup",
   "cli": {
-    "analytics": "6b37b221-0afb-47ae-bdba-897654f84a27"
+    "analytics": "6b37b221-0afb-47ae-bdba-897654f84a27",
+    "packageManager": "yarn"
   }
 }
