@@ -1,0 +1,56 @@
+trigger:
+- master
+- develop
+- release/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    npm ci
+  displayName: 'Restore dependencies'
+
+- task: Npm@1
+  displayName: 'Audit'
+  inputs:
+    command: 'custom'
+    customCommand: 'audit --audit-level=high'
+  
+- task: Npm@1
+  displayName: 'Lint'
+  inputs:
+    command: 'custom'
+    customCommand: 'run lint'
+  condition: succeededOrFailed()
+
+- task: Npm@1
+  displayName: 'Build'
+  inputs:
+    command: 'custom'
+    customCommand: 'run build'
+  condition: succeededOrFailed()
+
+- task: Npm@1
+  displayName: 'Test'
+  inputs:
+    command: 'custom'
+    customCommand: 'run test -- --reporters=jest-junit --reporters=default --coverage --coverageReporters=cobertura'
+  condition: succeededOrFailed()
+
+- task: PublishTestResults@2
+  displayName: 'Publish test results'
+  inputs:
+    testResultsFiles: junit.xml
+    mergeTestResults: true
+    testRunTitle: 'Jest Unit Tests'
+  condition: succeededOrFailed()
+
+- task: PublishCodeCoverageResults@1
+  displayName: 'Publish code coverage'
+  inputs:
+    codeCoverageTool: cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/*coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/coverage'
+    failIfCoverageEmpty: true
+  condition: succeededOrFailed()
