@@ -9,14 +9,16 @@ import { environment } from '../environments/environment';
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { MapComponent } from './components/map/map.component';
 // END OF MATERIAL
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,9 @@
 // Custom Theme
 @import '../src/assets/css/handup-material-theme.css';
 
+// leaflet styles
+@import "~leaflet/dist/leaflet.css";
+
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
