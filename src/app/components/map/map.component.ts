@@ -31,13 +31,14 @@ export class MapComponent implements OnInit, AfterViewInit {
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
         maxZoom: 19,
-        attribution:
-          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }
     );
   
     //const EsriImageryClarity = L.esri.basemapLayer('ImageryClarity',{maxZoom:21});
-    const EsriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 20, attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=974d45be315c4c87b2ac32be59af9a0b">Esri</a> contributors'});
+    const EsriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 20, 
+      attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=974d45be315c4c87b2ac32be59af9a0b">Esri</a> contributors'});
 
 
     OSM.addTo(this.map);
@@ -52,8 +53,13 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     // fetching json data
     this.dataService.getProperty().subscribe((data) => {
-      console.log('DATA: ', data);
-      L.geoJSON(data).addTo(this.map);
+      console.log('DATA: ', data.properties);
+      L.geoJSON(data).addTo(this.map)
+      .bindPopup(
+        '<b>' + 
+        'Name:' + data.properties.Name + 
+        '</b><br>' + 
+        'Cost: ' + data.properties.Cost.Amount)
     })
   }
 }
