@@ -58,15 +58,15 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     // fetching geojson data
     this.dataService.getProperty().subscribe((data) => {
-      console.log('DATA: ', data.properties);
+      console.log('DATA: ', data.features);
       L.geoJSON(data, {
         pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon});}
       }).addTo(this.map)
       .bindPopup(
         '<b>' + 
-        'Name:' + data.properties.features.Name + 
+        'Name:' + data.features + 
         '</b><br>' + 
-        'Cost: ' + data.properties.features.Cost.Amount)
+        'Cost: ' + data.features)
     })
   }
 }
