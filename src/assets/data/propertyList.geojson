@@ -1,0 +1,126 @@
+{
+  "type": "FeatureCollection",
+
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Code": "ABC-123",
+        "Name": "The Post Office Hotel",
+        "Address": {
+          "Unit": "1",
+          "StreetNumber": "3",
+          "Street": "Serlby",
+          "StreetType": "Place",
+          "Suburb": "Porirua City Centre",
+          "Postcode": "5022",
+          "TerritorialAuthority": "Porirua",
+          "FullAddress": "3 Serlby Place, Porirua City Centre, Porirua 5022"
+        },
+        "PhoneNumber": "04 385 3344",
+        "Categories": ["Shelters", "Food Avaliable", "Laundry"],
+        "Features": [
+          {
+            "BedsAvaliable": 15
+          },
+          {
+            "FamilyRoomsAvaliable": 2
+          }
+        ],
+        "Cost": {
+          "Amount": 10.5,
+          "Currency": "NZD",
+          "Frequency": "per night"
+        },
+        "OperationHours": [
+          {
+            "Day": "Monday",
+            "Hours": {
+              "Open": "10:00AM",
+              "Close": "6:30PM"
+            }
+          },
+          {
+            "Day": "Tuesday",
+            "Hours": {
+              "Open": "10:00AM",
+              "Close": "6:30PM"
+            }
+          },
+          {
+            "Day": "Friday",
+            "Hours": {
+              "Open": "11:30AM",
+              "Close": "6:30PM"
+            }
+          }
+        ],
+        "Description": "Crisis and transitional accommodation for homeless men 18+"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.8383448, -41.1346502]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Code": "ABC-124",
+        "Name": "Hospital",
+        "Address": {
+          "Unit": "x",
+          "StreetNumber": "x",
+          "Street": "x",
+          "StreetType": "x",
+          "Suburb": "x",
+          "Postcode": "x",
+          "TerritorialAuthority": "x",
+          "FullAddress": "x"
+        },
+        "PhoneNumber": "x",
+        "Categories": ["Shelters", "Food Avaliable", "Laundry"],
+        "Features": [
+          {
+            "BedsAvaliable": 34
+          },
+          {
+            "FamilyRoomsAvaliable": 5
+          }
+        ],
+        "Cost": {
+          "Amount": 20.5,
+          "Currency": "NZD",
+          "Frequency": "per night"
+        },
+        "OperationHours": [
+          {
+            "Day": "Monday",
+            "Hours": {
+              "Open": "10:00AM",
+              "Close": "6:30PM"
+            }
+          },
+          {
+            "Day": "Tuesday",
+            "Hours": {
+              "Open": "10:00AM",
+              "Close": "6:30PM"
+            }
+          },
+          {
+            "Day": "Friday",
+            "Hours": {
+              "Open": "11:30AM",
+              "Close": "6:30PM"
+            }
+          }
+        ],
+        "Description": "Crisis and transitional accommodation for homeless men 18+"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.833857, -41.147551]
+      }
+    }
+  ]
+}

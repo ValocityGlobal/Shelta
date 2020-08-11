@@ -1,6 +1,30 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer [mode]="drawerMode" class="drawer-content">
-    <p>Side Nav Drawer</p>
+
+    <!-- map search -->
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        (keyup)="applySearch($event)"
+        placeholder="example: Shelter"
+        #input
+      />
+    </mat-form-field>
+
+    <!-- Map Filters -->
+    <mat-radio-group
+      class="mapFilterGroup"
+      color="primary"
+      aria-label="Select an option"
+      (change)="onServiceSelected($event)"
+    >
+      <mat-radio-button value="1">Shelter</mat-radio-button>
+      <mat-radio-button value="2">Food</mat-radio-button>
+      <mat-radio-button value="3">Shower</mat-radio-button>
+      <mat-radio-button value="4">Employment Help</mat-radio-button>
+      <mat-radio-button value="5">Laundry Service</mat-radio-button>
+    </mat-radio-group>
   </mat-drawer>
   <mat-drawer-content>
     <div class="main-wrapper">
