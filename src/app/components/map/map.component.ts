@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-
+import { DataService } from "../../services/data-service.service";
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -9,11 +9,14 @@ import * as L from 'leaflet';
 export class MapComponent implements OnInit, AfterViewInit {
   private map;
 
-  constructor() {}
+  constructor(
+    private dataService: DataService
+  ) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
+    // DOM has been rendered and our div exists
     // Note that the map div needs to already exist on the DOM before we can reference it to create our map.
     this.initMap();
   }
@@ -34,5 +37,10 @@ export class MapComponent implements OnInit, AfterViewInit {
     );
 
     tiles.addTo(this.map);
+
+    // fetching json data
+    this.dataService.getProperty().subscribe((data) => {
+      console.log('DATA: ', data);
+    })
   }
 }
