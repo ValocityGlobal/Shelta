@@ -10,6 +10,7 @@
         placeholder="example: Shelter"
         #input
       />
+      <mat-icon matSuffix >search</mat-icon>
     </mat-form-field>
 
     <!-- Map Filters -->
@@ -19,11 +20,11 @@
       aria-label="Select an option"
       (change)="onServiceSelected($event)"
     >
-      <mat-radio-button value="1">Shelter</mat-radio-button>
-      <mat-radio-button value="2">Food</mat-radio-button>
-      <mat-radio-button value="3">Shower</mat-radio-button>
-      <mat-radio-button value="4">Employment Help</mat-radio-button>
-      <mat-radio-button value="5">Laundry Service</mat-radio-button>
+      <mat-radio-button checked value="1"><mat-icon>hotel</mat-icon> Shelter</mat-radio-button>
+      <mat-radio-button value="2"><mat-icon>restaurant</mat-icon> Food</mat-radio-button>
+      <mat-radio-button value="3"><mat-icon>bathtub</mat-icon> Shower</mat-radio-button>
+      <mat-radio-button value="4"><mat-icon>business_center</mat-icon> Employment Help</mat-radio-button>
+      <mat-radio-button value="5"><mat-icon>local_laundry_service</mat-icon> Laundry Service</mat-radio-button>
     </mat-radio-group>
   </mat-drawer>
   <mat-drawer-content>
