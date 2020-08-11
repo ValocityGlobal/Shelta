@@ -36,11 +36,15 @@ export class MapComponent implements OnInit, AfterViewInit {
       }
     );
   
+    //const EsriImageryClarity = L.esri.basemapLayer('ImageryClarity',{maxZoom:21});
+    const EsriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {maxZoom: 20, attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=974d45be315c4c87b2ac32be59af9a0b">Esri</a> contributors'});
+  
 
     OSM.addTo(this.map);
 
     const BaseMaps = {
-      "Open Street Map": OSM
+      "Open Street Map": OSM,
+      "Esri Imagery": EsriWorldImagery
     };
 
     L.control.layers(BaseMaps).addTo(this.map);
