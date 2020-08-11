@@ -58,13 +58,17 @@ export class MapComponent implements OnInit, AfterViewInit {
       console.log('DATA: ', data.features);
 
       var Beds = L.geoJSON(data, {
-        pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon});}
-      }).addTo(this.map)
-      .bindPopup(
+        pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon})},
+        onEachFeature: function (feature, layer) {layer.bindPopup(
         '<b>' + 
-        'Name:' + data.features + 
+        'Name:' + feature.properties.Name + 
         '</b><br>' + 
-        'Cost: ' + data.features)
+        'Cost: ' + feature.properties.Cost.Amount);
+        }
+      }).addTo(this.map);
+
+
+
 
         const overlayMaps = {"Beds": Beds};
         const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
