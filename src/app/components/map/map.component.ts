@@ -27,7 +27,7 @@ export class MapComponent implements OnInit, AfterViewInit {
       zoom: 14,
     });
 
-    const tiles = L.tileLayer(
+    const OSM = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
         maxZoom: 19,
@@ -35,8 +35,16 @@ export class MapComponent implements OnInit, AfterViewInit {
           '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       }
     );
+  
 
-    tiles.addTo(this.map);
+    OSM.addTo(this.map);
+
+    const BaseMaps = {
+      "Open Street Map": OSM
+    };
+
+    L.control.layers(BaseMaps).addTo(this.map);
+
 
     // fetching json data
     this.dataService.getProperty().subscribe((data) => {
