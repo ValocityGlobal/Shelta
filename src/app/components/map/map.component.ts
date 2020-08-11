@@ -23,15 +23,15 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   initMap() {
 
-
-  var bed_icon = L.icon({
-    iconUrl: 'assets/icons/map-pins/bed/bed_64x64.png',
-    iconSize:     [64, 64], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
+    var bed_icon = L.icon({
+      iconUrl: 'assets/icons/map-pins/bed/bed_64x64.png',
+      iconSize:     [64, 64], // size of the icon
+      iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+      popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
 
     this.map = L.map('map', {
+      // Auckland center: [-36.848701, 174.763873]
       center: [-41.1346502,174.8383448],
       zoom: 14,
     });
@@ -42,7 +42,6 @@ export class MapComponent implements OnInit, AfterViewInit {
       }
     );
   
-    //const EsriImageryClarity = L.esri.basemapLayer('ImageryClarity',{maxZoom:21});
     const EsriWorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 20, 
         attribution: '&copy; <a href="https://www.arcgis.com/home/item.html?id=974d45be315c4c87b2ac32be59af9a0b">Esri</a> contributors'
@@ -52,14 +51,13 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     OSM.addTo(this.map);
 
-    const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
-    L.control.layers(BaseMaps).addTo(this.map);
-
 
     // fetching geojson data
     this.dataService.getProperty().subscribe((data) => {
+
       console.log('DATA: ', data.features);
-      L.geoJSON(data, {
+
+      var Beds = L.geoJSON(data, {
         pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon});}
       }).addTo(this.map)
       .bindPopup(
@@ -67,6 +65,11 @@ export class MapComponent implements OnInit, AfterViewInit {
         'Name:' + data.features + 
         '</b><br>' + 
         'Cost: ' + data.features)
+
+        const overlayMaps = {"Beds": Beds};
+        const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
+        L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
+
     })
   }
 }
