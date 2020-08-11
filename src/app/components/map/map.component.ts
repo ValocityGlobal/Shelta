@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import * as L from 'leaflet';
 import { DataService } from '../../services/data-service.service';
+import { PopupComponent } from '../popup/popup.component';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -9,7 +12,7 @@ import { DataService } from '../../services/data-service.service';
 export class MapComponent implements OnInit, AfterViewInit {
   private map;
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -58,20 +61,16 @@ export class MapComponent implements OnInit, AfterViewInit {
       let propertyList = data['features'] as object[];
       console.log('DATA: ', propertyList);
 
-      var Shelters = L.geoJSON(propertyList, {
-        pointToLayer: function (feature, latlng) {
-          return L.marker(latlng, { icon: bed_icon });
-        },
-      })
+      var Shelters = L.geoJSON(propertyList,
+          {
+            pointToLayer: function(feature, latlng) {
+              return L.marker(latlng, { icon: bed_icon });
+            },
+          })
         .addTo(this.map)
-        .bindPopup(
-          '<b>' +
-            'Name:' +
-            propertyList['properties'] +
-            '</b><br>' +
-            'Cost: ' +
-            propertyList['properties']
-        );
+        .on('click', () => {
+          this.openDialog();
+        });
 
       const overlayMaps = { Shelters: Shelters };
       const BaseMaps = {
@@ -79,6 +78,13 @@ export class MapComponent implements OnInit, AfterViewInit {
         'Esri Imagery': EsriWorldImagery,
       };
       L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
+    });
+  }
+
+  openDialog(): void {
+    this.dialog.open(PopupComponent, {
+      width: '350px',
+      data: {},
     });
   }
 }

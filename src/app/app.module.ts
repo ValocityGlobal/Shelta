@@ -1,11 +1,11 @@
-// MATERIAL
 import { MaterialModule } from './material-module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MapComponent } from './components/map/map.component';
-// END OF MATERIAL
+import { PopupComponent } from './components/popup/popup.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -23,7 +23,8 @@ import { DataService } from './services/data-service.service';
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    MapComponent
+    MapComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +32,7 @@ import { DataService } from './services/data-service.service';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    MatDialogModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
