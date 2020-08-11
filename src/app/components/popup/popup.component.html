@@ -1,24 +1,21 @@
 <button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
   <mat-icon class="close-icon">close</mat-icon>
 </button>
-<h1 mat-dialog-title>Auckland Night Shelter</h1>
+<h1 mat-dialog-title>{{ data.name }}</h1>
 <div mat-dialog-content class="pop-up-address">
-  304 Taranaki Street, Auckland
+  {{ data.fullAddress }}
 </div>
 <br />
 <div mat-dialog-content class="pop-up-content">
   <strong>Phone: </strong>
-  04 385 3344
+  {{ data.phoneNumber }}
 </div>
 <br />
 <div mat-dialog-content class="pop-up-content">
   <strong>Hours: </strong>
-  5:20 pm to 7:30 am
+  {{ data.operationHours }}
 </div>
 <br />
 <div mat-dialog-content class="pop-up-content">
-  <strong>Crisis and transitional information for homeless men</strong>
-</div>
-<div mat-dialog-content class="pop-up-content">
-  Short-term crisis accommodation(cubicle style rooms, shared bathrooms, access to hot drinks and laundy facilities).
+  {{ data.description }}
 </div>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-popup',
@@ -7,5 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
-  constructor(public dialogRef: MatDialogRef<PopupComponent>) { }
+  constructor(
+    public dialogRef: MatDialogRef<PopupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 }

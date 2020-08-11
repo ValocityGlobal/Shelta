@@ -63,13 +63,13 @@ export class MapComponent implements OnInit, AfterViewInit {
 
       var Shelters = L.geoJSON(propertyList,
           {
-            pointToLayer: function(feature, latlng) {
+            pointToLayer: function (feature, latlng) {
               return L.marker(latlng, { icon: bed_icon });
-            },
+            }
           })
         .addTo(this.map)
-        .on('click', () => {
-          this.openDialog();
+        .on('click', (marker) => {
+          this.openDialog(marker);
         });
 
       const overlayMaps = { Shelters: Shelters };
@@ -81,10 +81,20 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
   }
 
-  openDialog(): void {
+  openDialog(marker): void {
     this.dialog.open(PopupComponent, {
       width: '350px',
-      data: {},
+      data: {
+        name: 'Auckland Night Shelter',
+        fullAddress: '314 Taranaki St',
+        phoneNumber: '04 385 3344',
+        operationHours: '5:20 pm to 7:30 am',
+        description: 'Crisis and transitional information for homeless men'
+      },
+      position: {
+        top: marker.containerPoint.y.toString() + 'px',
+        left: marker.containerPoint.x.toString() + 'px'
+      }
     });
   }
 }
