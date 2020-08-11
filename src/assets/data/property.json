@@ -13,17 +13,14 @@
       "FullAddress": "3 Serlby Place, Porirua City Centre, Porirua 5022",
       "geometry": {
         "type": "Point",
-        "coordinates": [ -41.1346502, 174.8383448 ]
+        "coordinates": [-41.1346502, 174.8383448]
       }
     },
     "PhoneNumber": "04 385 3344",
-    "Categories": [ "Shelters", "Food Avaliable", "Laundry" ],
-    "Features": [
-      { "BedsAvaliable": 15 },
-      { "FamilyRoomsAvaliable": 2 }
-    ],
+    "Categories": ["Shelters", "Food Avaliable", "Laundry"],
+    "Features": [{ "BedsAvaliable": 15 }, { "FamilyRoomsAvaliable": 2 }],
     "Cost": {
-      "Amount": 10.50,
+      "Amount": 10.5,
       "Currency": "NZD",
       "Frequency": "per night"
     },

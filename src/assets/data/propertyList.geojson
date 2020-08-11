@@ -1,7 +1,8 @@
 {
   "type": "FeatureCollection",
 
-  "features": [{
+  "features": [
+    {
       "type": "Feature",
       "properties": {
         "Code": "ABC-123",
@@ -18,7 +19,8 @@
         },
         "PhoneNumber": "04 385 3344",
         "Categories": ["Shelters", "Food Avaliable", "Laundry"],
-        "Features": [{
+        "Features": [
+          {
             "BedsAvaliable": 15
           },
           {
@@ -26,11 +28,12 @@
           }
         ],
         "Cost": {
-          "Amount": 10.50,
+          "Amount": 10.5,
           "Currency": "NZD",
           "Frequency": "per night"
         },
-        "OperationHours": [{
+        "OperationHours": [
+          {
             "Day": "Monday",
             "Hours": {
               "Open": "10:00AM",
@@ -76,7 +79,8 @@
         },
         "PhoneNumber": "x",
         "Categories": ["Shelters", "Food Avaliable", "Laundry"],
-        "Features": [{
+        "Features": [
+          {
             "BedsAvaliable": 34
           },
           {
@@ -84,11 +88,12 @@
           }
         ],
         "Cost": {
-          "Amount": 20.50,
+          "Amount": 20.5,
           "Currency": "NZD",
           "Frequency": "per night"
         },
-        "OperationHours": [{
+        "OperationHours": [
+          {
             "Day": "Monday",
             "Hours": {
               "Open": "10:00AM",

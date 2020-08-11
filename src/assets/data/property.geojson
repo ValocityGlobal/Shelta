@@ -15,7 +15,8 @@
     },
     "PhoneNumber": "04 385 3344",
     "Categories": ["Shelters", "Food Avaliable", "Laundry"],
-    "Features": [{
+    "Features": [
+      {
         "BedsAvaliable": 15
       },
       {
@@ -23,11 +24,12 @@
       }
     ],
     "Cost": {
-      "Amount": 10.50,
+      "Amount": 10.5,
       "Currency": "NZD",
       "Frequency": "per night"
     },
-    "OperationHours": [{
+    "OperationHours": [
+      {
         "Day": "Monday",
         "Hours": {
           "Open": "10:00AM",
