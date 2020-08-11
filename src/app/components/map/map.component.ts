@@ -31,9 +31,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-
-
-
     this.map = L.map('map', {
       center: [-41.1346502,174.8383448],
       zoom: 14,
@@ -67,9 +64,9 @@ export class MapComponent implements OnInit, AfterViewInit {
       }).addTo(this.map)
       .bindPopup(
         '<b>' + 
-        'Name:' + data.properties.Name + 
+        'Name:' + data.properties.features.Name + 
         '</b><br>' + 
-        'Cost: ' + data.properties.Cost.Amount)
+        'Cost: ' + data.properties.features.Cost.Amount)
     })
   }
 }
