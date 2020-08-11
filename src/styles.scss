@@ -1,8 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-// Material theme
-@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// Material themes
+// @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber';
+// @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+// @import '~@angular/material/prebuilt-themes/purple-green.css';
+// Custom Theme
+@import '../src/assets/css/handup-material-theme.css';
 
 body {
   font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  width: 200px;
+  margin: 20px 10px;
 }
