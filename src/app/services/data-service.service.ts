@@ -18,7 +18,6 @@ export class DataService {
   constructor(private _http: HttpClient) {}
 
   getProperty() {
-    // [TODO: Backend Integration] replace dummy json with real API
-    return this._http.get('/assets/data/property.json', this.getHttpOptions);
+    return this._http.get('/assets/data/propertyList.geojson', this.getHttpOptions);
   }
 }
