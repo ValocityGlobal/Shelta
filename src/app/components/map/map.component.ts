@@ -23,8 +23,8 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   initMap() {
     this.map = L.map('map', {
-      center: [39.8282, -98.5795],
-      zoom: 3,
+      center: [-36.851509, 174.765167],
+      zoom: 14,
     });
 
     const tiles = L.tileLayer(
