@@ -1,0 +1,21 @@
+<button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon">close</mat-icon>
+</button>
+<h1 mat-dialog-title>{{ data.name }}</h1>
+<div mat-dialog-content class="pop-up-address">
+  {{ data.fullAddress }}
+</div>
+<br />
+<div mat-dialog-content class="pop-up-content">
+  <strong>Phone: </strong>
+  {{ data.phoneNumber }}
+</div>
+<br />
+<div mat-dialog-content class="pop-up-content">
+  <strong>Hours: </strong>
+  {{ data.operationHours }}
+</div>
+<br />
+<div mat-dialog-content class="pop-up-content">
+  {{ data.description }}
+</div>

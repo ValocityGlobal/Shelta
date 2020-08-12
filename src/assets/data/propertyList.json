@@ -15,17 +15,14 @@
           "FullAddress": "3 Serlby Place, Porirua City Centre, Porirua 5022",
           "geometry": {
             "type": "Point",
-            "coordinates": [ -41.1346502, 174.8383448 ]
+            "coordinates": [-41.1346502, 174.8383448]
           }
         },
         "PhoneNumber": "04 385 3344",
-        "Categories": [ "Shelters", "Food Avaliable", "Laundry" ],
-        "Features": [
-          { "BedsAvaliable": 15 },
-          { "FamilyRoomsAvaliable": 2 }
-        ],
+        "Categories": ["Shelters", "Food Avaliable", "Laundry"],
+        "Features": [{ "BedsAvaliable": 15 }, { "FamilyRoomsAvaliable": 2 }],
         "Cost": {
-          "Amount": 10.50,
+          "Amount": 10.5,
           "Currency": "NZD",
           "Frequency": "per night"
         },
@@ -69,17 +66,14 @@
           "FullAddress": "126 Newton Road, Eden Terrace, Auckland 1010",
           "geometry": {
             "type": "Point",
-            "coordinates": [ -36.8631404, 174.7586738 ]
+            "coordinates": [-36.8631404, 174.7586738]
           }
         },
         "PhoneNumber": "04 385 3344",
-        "Categories": [ "Shelters", "Food Avaliable", "Laundry" ],
-        "Features": [
-          { "BedsAvaliable": 15 },
-          { "FamilyRoomsAvaliable": 2 }
-        ],
+        "Categories": ["Shelters", "Food Avaliable", "Laundry"],
+        "Features": [{ "BedsAvaliable": 15 }, { "FamilyRoomsAvaliable": 2 }],
         "Cost": {
-          "Amount": 15.00,
+          "Amount": 15.0,
           "Currency": "NZD",
           "Frequency": "per night"
         },
@@ -137,17 +131,14 @@
           "FullAddress": "22 Dundonald Street, Eden Terrace, Auckland 1010",
           "geometry": {
             "type": "Point",
-            "coordinates": [ -36.8647391, 174.7594311 ]
+            "coordinates": [-36.8647391, 174.7594311]
           }
         },
         "PhoneNumber": "04 385 3344",
-        "Categories": [ "Hair Cut", "Employment", "Laundry" ],
-        "Features": [
-          { "BedsAvaliable": 15 },
-          { "FamilyRoomsAvaliable": 2 }
-        ],
+        "Categories": ["Hair Cut", "Employment", "Laundry"],
+        "Features": [{ "BedsAvaliable": 15 }, { "FamilyRoomsAvaliable": 2 }],
         "Cost": {
-          "Amount": 15.00,
+          "Amount": 15.0,
           "Currency": "NZD",
           "Frequency": "per night"
         },

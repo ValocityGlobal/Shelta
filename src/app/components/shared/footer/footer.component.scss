@@ -3,3 +3,32 @@
   color: #999;
   padding: 16px;
 }
+
+.footer-content-wrapper {
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+}
+
+.left-footer {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  width: 100%;
+}
+
+.right-footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+
+  .copyright {
+    margin-right: 1rem;
+  }
+
+  .poweredby {
+    margin-right: 1rem;
+  }
+}

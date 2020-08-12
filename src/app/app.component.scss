@@ -9,7 +9,7 @@
 .drawer-content {
   margin: 0;
   padding: 1rem;
-  min-width: 15%;
+  min-width: 200px;
 }
 
 .spacer {
@@ -28,4 +28,14 @@
   position: relative;
   flex-grow: 1;
   padding: 2rem;
+}
+
+.mapFilterGroup {
+  display: flex;
+  flex-direction: column;
+
+  .mat-radio-button {
+    margin:1rem;
+  }
+
 }

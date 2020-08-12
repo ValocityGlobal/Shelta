@@ -51,3 +51,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+## Online Resources
+
+A good online tutorial to build a leaflet map with Angular:
+- [Part 1: Setup the Map object](https://www.digitalocean.com/community/tutorials/angular-angular-and-leaflet) 
+- [Part 2: The Marker Service](https://www.digitalocean.com/community/tutorials/angular-angular-and-leaflet-marker-service) 
+- [Part 3: The Popup Service](https://www.digitalocean.com/community/tutorials/angular-angular-and-leaflet-popup-service) 
+- [Part 4: The Shape Service](https://www.digitalocean.com/community/tutorials/angular-angular-and-leaflet-shape-service)

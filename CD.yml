@@ -34,11 +34,22 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-    - task: PowerShell@2
-      inputs:
-        targetType: 'inline'
-        script: '$pw = ConvertTo-SecureString #{ContainerRegistryPassword} -string $env:PASSWORD –asplaintext –force'
-    - task: PowerShell@2
-      inputs:
-        targetType: 'inline'
-        script: 'Set-AzureRmWebApp -ResourceGroupName ''#{ResourceGroup}'' -Name ''#{WebSiteName}'' -ContainerImageName ''#{ContainerImageName}'' -ContainerRegistryUrl ''#{ContainerRegistryURL}'' -ContainerRegistryUser ''#{ContainerRegistryUser}'' -ContainerRegistryPassword $pw'
+- stage: DeployAPIToTest
+  displayName: Deploy API To Test
+  jobs:
+  - deployment: DeployAPIToTest
+    displayName: Deploy API To Test
+    pool:
+      vmImage: 'Ubuntu-latest'
+    # creates an environment if it doesn't exist
+    environment: 'Test'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: 'Enterprise Dev/Test(5703323c-9abf-4b35-8634-0e8116df941d)'
+              scriptType: 'pscore'
+              scriptLocation: 'inlineScript'
+              inlineScript: 'az webapp config container set --name handup-fe-test --resource-group HandUp --docker-custom-image-name $(containerRegistry)/$(imageRepository):$(tag) --docker-registry-server-url $(containerRegistry)'

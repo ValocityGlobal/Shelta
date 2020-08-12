@@ -1,12 +1,38 @@
 <mat-drawer-container class="drawer-container" autosize>
   <mat-drawer #drawer [mode]="drawerMode" class="drawer-content">
-    <div style="height: 80%;"><p>Side Nav Drawer</p></div>
-    <div style="height: 20%; vertical-align: bottom;">
+
+    <!-- map search -->
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input
+        matInput
+        (keyup)="applySearch($event)"
+        placeholder="example: Shelter"
+        #input
+      />
+      <mat-icon matSuffix >search</mat-icon>
+    </mat-form-field>
+
+    <!-- Map Filters -->
+    <mat-radio-group
+      class="mapFilterGroup"
+      color="primary"
+      aria-label="Select an option"
+      (change)="onServiceSelected($event)"
+    >
+      <mat-radio-button checked value="1"><mat-icon>hotel</mat-icon> Shelter</mat-radio-button>
+      <mat-radio-button value="2"><mat-icon>restaurant</mat-icon> Food</mat-radio-button>
+      <mat-radio-button value="3"><mat-icon>bathtub</mat-icon> Shower</mat-radio-button>
+      <mat-radio-button value="4"><mat-icon>business_center</mat-icon> Employment Help</mat-radio-button>
+      <mat-radio-button value="5"><mat-icon>local_laundry_service</mat-icon> Laundry Service</mat-radio-button>
+    </mat-radio-group>
+    
+    <mat-card-content>
       <p><strong>Suicide Crisis Helpline</strong> <br>
-      <a target="_blank" href="https://www.lifeline.org.nz">https://www.lifeline.org.nz</a>​</p>
-      <p>TAUTOKO/0508 828 865​<br>
-      Suicide Helpline - available 24/7</p>
-    </div>
+        <a target="_blank" href="https://www.lifeline.org.nz">https://www.lifeline.org.nz</a>​</p>
+        <p>TAUTOKO/0508 828 865​<br>
+        Suicide Helpline - available 24/7</p>
+    </mat-card-content>
   </mat-drawer>
   <mat-drawer-content>
     <div class="main-wrapper">
