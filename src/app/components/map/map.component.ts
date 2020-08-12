@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import * as L from 'leaflet';
 import { DataService } from '../../services/data-service.service';
 import { PopupComponent } from '../popup/popup.component';
+import { WelcomePopupComponent } from '../WelcomePopup/welcomePopup.component';
 
 @Component({
   selector: 'app-map',
@@ -14,7 +15,9 @@ export class MapComponent implements OnInit, AfterViewInit {
 
   constructor(private dataService: DataService, private dialog: MatDialog) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.openWelcomePopup();
+  }
 
   ngAfterViewInit() {
     // DOM has been rendered and our div exists
@@ -96,5 +99,15 @@ export class MapComponent implements OnInit, AfterViewInit {
         left: marker.containerPoint.x.toString() + 'px'
       }
     });
+  }
+
+  openWelcomePopup() {
+    this.dialog.open(WelcomePopupComponent, {
+      width: '350px',
+      data: {
+        welcomeTitle: 'Welcome!',
+        welcomeMessage: 'Click on the map pins to view additional information on the location including contact details and hours.'
+      }
+    });    
   }
 }

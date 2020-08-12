@@ -6,6 +6,7 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { MapComponent } from './components/map/map.component';
 import { PopupComponent } from './components/popup/popup.component';
+import { WelcomePopupComponent } from './components/WelcomePopup/welcomePopup.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,8 @@ import { DataService } from './services/data-service.service';
     FooterComponent,
     HeaderComponent,
     MapComponent,
-    PopupComponent
+    PopupComponent,
+    WelcomePopupComponent
   ],
   imports: [
     BrowserModule,
