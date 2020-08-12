@@ -1,0 +1,106 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "Name": "Auckland City Mission",
+        "Address": {
+          "FullAddress": "23 Union Street, Auckland Central"
+        },
+        "PhoneNumber": "09 3039200",
+        "Email" : "info@aucklandcitymission.org.nz",
+        "Categories": ["Shelters"],
+        "Description": "work with other agencies and support providers to reduce duplication of services and ensure the best possible outcomes for homeless clients."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.756532, -36.852546]
+      }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+          "Name": "Emerge Aotearoa",
+          "Address": {
+            "FullAddress": "103 Richardson Road, Mt Albert"
+          },
+          "PhoneNumber": "0800 559 009 MSD",
+          "Email" : "info@jamesliston.co.nz",
+          "Categories": ["Shelters"],
+          "Description": "in partnership with Lifewise to develop a tailored ‘Housing First’ model for central Auckland. ‘Housing First’ is an innovative and proven approach to housing people experiencing chronic homelessness."
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [174.715251, -36.894722]
+        }
+      },
+      {
+          "type": "Feature",
+          "properties": {
+            "Name": "James Liston Emergency Housing Provider",
+            "Address": {
+              "FullAddress": "35 Howe St, Freemans Bay"
+            },
+            "PhoneNumber": "09 376 3885",
+            "Email" : "",
+            "Categories": ["Shelters"],
+            "Description": "Emergency housing for up to 3 months to men and women who are homeless or at risk of being homeless. Staffed 24/7, $2 laundry, Breakfast & Dinner, along with providing safe clean accommodation, the hostel also provides support and case management services to residents. $88.00 per week for beneficiary, student, pensioner $250 per week non-beneficiary"
+          },
+          "geometry": {
+            "type": "Point",
+            "coordinates": [174.755146, -36.856942]
+          }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "Name": "Lifewise",
+              "Address": {
+                "FullAddress": "323 Queen Street - several addresses for services"
+              },
+              "PhoneNumber": "09 3025390",
+              "Email" : "lifewise@lifewise.org.nz",
+              "Categories": ["Shelters"],
+              "Description": "Youth housing service providing safe housing and support for youth who don’t have a safe or stable place to live. For 16-24-year-olds who either are homeless, at risk of becoming homeless or have a serious housing need."
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [174.763012, -36.853803]
+            }
+          },
+          {
+              "type": "Feature",
+              "properties": {
+                "Name": "Vision West",
+                "Address": {
+                  "FullAddress": "Building 7, 97 Glendale Road, Glen Eden"
+                },
+                "PhoneNumber": "0800 559 009",
+                "Email" : "lifewise@lifewise.org.nz",
+                "Categories": ["Shelters"],
+                "Description": "Public funded housing"
+              },
+              "geometry": {
+                "type": "Point",
+                "coordinates": [174.648924, 36.917889]
+              }
+            },
+            {
+                "type": "Feature",
+                "properties": {
+                  "Name": "YMCA",
+                  "Address": {
+                    "FullAddress": "150 Vincent Street"
+                  },
+                  "PhoneNumber": "09 379 6183",
+                  "Email" : "https://www.ymcaaccommodation.org.nz/contact",
+                  "Categories": ["Shelters"],
+                  "Description": "City Lodge Auckland"
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [174.759448, -36.854553]
+                }
+              }
+  ]
+}
