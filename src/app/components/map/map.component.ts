@@ -60,20 +60,45 @@ export class MapComponent implements OnInit, AfterViewInit {
     OSM.addTo(this.map);
 
     // fetching geojson data
+    var self = this;
     this.dataService.getProperty().subscribe((data) => {
       let propertyList = data['features'] as object[];
       console.log('DATA: ', propertyList);
 
       var Shelters = L.geoJSON(propertyList,
           {
-            pointToLayer: function (feature, latlng) {
+            pointToLayer: function(feature, latlng) {
               return L.marker(latlng, { icon: bed_icon });
+            },
+            onEachFeature: function(feature, layer) {
+              layer.on({
+                click: function (e) {
+                  let operationHoursArr = e.target.feature.properties.OperationHours;
+                  let operationHoursCombined = '';
+                  operationHoursArr.forEach(x => {
+                    operationHoursCombined += x.Day + ' ' + x.Hours.Open + '-' + x.Hours.Close + '. ';
+                  });
+
+                  self.dialog.open(PopupComponent,
+                    {
+                      width: '350px',
+                      data: {
+                        name: e.target.feature.properties.Name,
+                        fullAddress: e.target.feature.properties.Address.FullAddress,
+                        phoneNumber: e.target.feature.properties.PhoneNumber,
+                        operationHours: operationHoursCombined,
+                        description: e.target.feature.properties.Description
+                      },
+                      position: {
+                        top: e.containerPoint.y.toString() + 'px',
+                        left: e.containerPoint.x.toString() + 'px'
+                      }
+                    });
+                }
+              });
             }
           })
-        .addTo(this.map)
-        .on('click', (marker) => {
-          this.openDialog(marker);
-        });
+        .addTo(this.map);
 
       const overlayMaps = { Shelters: Shelters };
       const BaseMaps = {
@@ -84,23 +109,6 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
   }
 
-  openDialog(marker): void {
-    this.dialog.open(PopupComponent, {
-      width: '350px',
-      data: {
-        name: 'Auckland Night Shelter',
-        fullAddress: '314 Taranaki St',
-        phoneNumber: '04 385 3344',
-        operationHours: '5:20 pm to 7:30 am',
-        description: 'Crisis and transitional information for homeless men'
-      },
-      position: {
-        top: marker.containerPoint.y.toString() + 'px',
-        left: marker.containerPoint.x.toString() + 'px'
-      }
-    });
-  }
-
   openWelcomePopup() {
     this.dialog.open(WelcomePopupComponent, {
       width: '350px',
@@ -108,6 +116,6 @@ export class MapComponent implements OnInit, AfterViewInit {
         welcomeTitle: 'Welcome!',
         welcomeMessage: 'Click on the map pins to view additional information on the location including contact details and hours.'
       }
-    });    
+    });
   }
 }

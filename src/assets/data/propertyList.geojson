@@ -75,9 +75,9 @@
           "Suburb": "x",
           "Postcode": "x",
           "TerritorialAuthority": "x",
-          "FullAddress": "x"
+          "FullAddress": "Hospital St, Wellington"
         },
-        "PhoneNumber": "x",
+        "PhoneNumber": "04 123 4567",
         "Categories": ["Shelters", "Food Avaliable", "Laundry"],
         "Features": [
           {
@@ -108,14 +108,14 @@
             }
           },
           {
-            "Day": "Friday",
+            "Day": "Saturday",
             "Hours": {
-              "Open": "11:30AM",
-              "Close": "6:30PM"
+              "Open": "10:00AM",
+              "Close": "5:00PM"
             }
           }
         ],
-        "Description": "Crisis and transitional accommodation for homeless men 18+"
+        "Description": "Free medical assessments."
       },
       "geometry": {
         "type": "Point",
