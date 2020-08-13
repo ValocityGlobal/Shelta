@@ -1,0 +1,130 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "Name": "Haeata",
+		"URL": "https://www.aucklandcitymission.org.nz/what-we-do/homeless-services/homeless-community-service/",
+        "Address": {
+          "FullAddress": "23 Union Street, Auckland Central"
+        },
+        "PhoneNumber": "",
+        "Email" : "info@aucklandcitymission.org.nz",
+        "Categories": ["Food"],
+        "Description": "Meals 365 days a Year. Monday – Friday 7.30am-10am 12-2.30pm. Weekend/Public Holidays - 10am-12.30pm, 12.30pm-3.30pm, 3.30pm-5.30pm"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.756532, -36.852546]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "218 Mt Albert Road, Sandringham, Auckland"
+        },
+        "PhoneNumber": "(09) 629 5063",
+        "Email" : "mtalbert_corps@salvationarmy.org.nz",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing. Opening hours 9:30am-4pm Tues-Fri and 9:30am-12pm Sunday (Hours may differ)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.731677, -36.895403]
+      }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "32 Delta Avenue, New Lynn, Auckland"
+        },
+        "PhoneNumber": "(09) 827 3128",
+        "Email" : "newlynn_corps@nzf.salvationarmy.org.nz",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.682623, -36.906745]
+      }
+    }, 
+	{
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "7-9 View Road, Henderson, Auckland"
+        },
+        "PhoneNumber": "(09) 837 4471",
+        "Email" : "waitakerecentral.corps@salvationarmy.org.nz",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.632589, -36.886142]
+      }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "4 Kaipatiki Rd, Glenfield, Auckland"
+        },
+        "PhoneNumber": "(09) 441 2554",
+        "Email" : "glenfield.cm@salvationarmy.org.nz",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing. TEMPORARILY CLOSED"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.720214, -36.781846]
+      }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "691A Mount Albert Road, Royal Oak, Auckland"
+        },
+        "PhoneNumber": "(09) 639 1181",
+        "Email" : "royaloak.cm@salvationarmy.org.nz",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.772529, -36.911458]
+      }
+    },
+	{
+      "type": "Feature",
+      "properties": {
+        "Name": "Salvation Army",
+		"URL": "https://www.salvationarmy.org.nz/get-help/welfare",
+        "Address": {
+          "FullAddress": "18 Allright Place, Mt Wellington, Auckland"
+        },
+        "PhoneNumber": "(09) 379 7615",
+        "Email" : "aucklandcity_corps@nzf.salvationarmy.org",
+        "Categories": ["Food"],
+        "Description": "Provides Food Parcels, as well as budgeting advice, life skills and parenting courses, social work, youth development, and transitional housing. Opening hours 10:00am-3pm Mon-Fri(Hours may differ)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.848273, -36.911086]
+      }
+    }
+  ]
+}

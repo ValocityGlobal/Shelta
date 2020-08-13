@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [{
+      "type": "Feature",
+      "properties": {
+        "Name": "Haeata",
+        "Address": {
+          "FullAddress": "23 Union Street, Auckland Central"
+        },
+        "PhoneNumber": "",
+        "Email" : "info@aucklandcitymission.org.nz",
+        "Categories": ["Food"],
+        "Description": "hot breakfast 365 days"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [174.756532, -36.852546]
+      }
+    },
+    {
+        "type": "Feature",
+        "properties": {
+          "Name": "Salvation Army",
+          "Address": {
+            "FullAddress": "23 Union Street, Auckland Central"
+          },
+          "PhoneNumber": "800 530 000",
+          "Email" : "aucklandcity_corps@nzf.salvationarmy.org",
+          "Categories": ["Food"],
+          "Description": "Food Parcels"
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [174.777944, -36.878159]
+        }
+      }
+
+  ]
+}

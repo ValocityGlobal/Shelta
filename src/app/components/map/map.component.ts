@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-import { DataService } from '../../services/data-service.service';
+import { groupedLayers } from 'leaflet-groupedlayercontrol';
+import { DataService } from "../../services/data-service.service";
+import { merge } from 'rxjs';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -28,8 +31,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
 
     this.map = L.map('map', {
-      // Auckland center: [-36.848701, 174.763873]
-      center: [-41.1346502, 174.8383448],
+      center: [-36.848701, 174.763873],
       zoom: 14,
     });
 
@@ -51,34 +53,37 @@ export class MapComponent implements OnInit, AfterViewInit {
       }
     );
 
+    //geolocation of the user
+    // this.map.locate({setView: true, watch: false}).on('locationfound', e => {
+    //   L.marker(e.latlng).addTo(this.map);
+    //   L.circle(e.latlng, e.accuracy/10).addTo(this.map);
+    // });
+
+
     OSM.addTo(this.map);
 
-    // fetching geojson data
-    this.dataService.getProperty().subscribe((data) => {
-      let propertyList = data['features'] as object[];
-      console.log('DATA: ', propertyList);
+    //merging all data sources into one
+    const allMapData$ = merge(
+      this.dataService.getShelters(),
+      this.dataService.getFood()
+    );
 
-      var Shelters = L.geoJSON(propertyList, {
-        pointToLayer: function (feature, latlng) {
-          return L.marker(latlng, { icon: bed_icon });
-        },
-      })
-        .addTo(this.map)
-        .bindPopup(
-          '<b>' +
-            'Name:' +
-            propertyList['properties'] +
-            '</b><br>' +
-            'Cost: ' +
-            propertyList['properties']
-        );
+    //fetching geojson data
+    allMapData$.subscribe(val => {
+      console.log(val)
+      var Shelters = L.geoJSON(val, {
+        pointToLayer:  (feature, latlng) => {return L.marker(latlng, {icon: bed_icon})},
+        onEachFeature:  (feature, layer) => {layer.bindPopup(
+        '<b>' +
+        'Name:' + feature.properties.Name +
+        '</b>');
+        }
+      }).addTo(this.map);
 
-      const overlayMaps = { Shelters: Shelters };
-      const BaseMaps = {
-        'Open Street Map': OSM,
-        'Esri Imagery': EsriWorldImagery,
-      };
+      const overlayMaps = {"Shelters": Shelters, "Food": Shelters};
+      const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
       L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
-    });
+
+    })
   }
 }
