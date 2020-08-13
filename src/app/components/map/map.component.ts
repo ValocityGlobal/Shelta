@@ -50,12 +50,13 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     OSM.addTo(this.map);
 
-    // fetching geojson data
+
+    //fetching geojson data
     this.dataService.getProperty().subscribe((data) => {
 
       var Beds = L.geoJSON(data, {
-        pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon})},
-        onEachFeature: function (feature, layer) {layer.bindPopup(
+        pointToLayer:  (feature, latlng) => {return L.marker(latlng, {icon: bed_icon})},
+        onEachFeature:  (feature, layer) => {layer.bindPopup(
         '<b>' + 
         'Name:' + feature.properties.Name + 
         '</b><br>' + 
@@ -67,13 +68,11 @@ export class MapComponent implements OnInit, AfterViewInit {
       const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
       L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
 
-      // //geolocation of the user
-      // this.map.locate({setView: true, watch: false})
-      // .on('locationfound', e => {
-      //   console.log(e.latlng);
-      //   L.marker(e.latlng);
-      //   L.circle(e.latlng, e.accuracy/2);
-      // });
+      //geolocation of the user
+      this.map.locate({setView: true, watch: false}).on('locationfound', e => {
+        L.marker(e.latlng).addTo(this.map);
+        L.circle(e.latlng, e.accuracy/10).addTo(this.map);
+      });
 
     })
   }
