@@ -18,6 +18,6 @@ export class DataService {
   constructor(private _http: HttpClient) {}
 
   getProperty() {
-    return this._http.get('/assets/data/propertyList.geojson', this.getHttpOptions);
+    return this._http.get('/assets/data/shelters.geojson', this.getHttpOptions);
   }
 }
