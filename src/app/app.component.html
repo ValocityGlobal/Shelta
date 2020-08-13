@@ -35,18 +35,11 @@
   <mat-drawer-content>
     <div class="main-wrapper">
       <app-header [drawer]="drawer"></app-header>
-      <app-map></app-map>
+
+      <div class="map-wrapper">
+        <app-map></app-map>
+      </div>
       <div class="main-content-wrapper">
-        <mat-card>
-          <mat-card-content>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-              similique exercitationem laborum quasi! Culpa dolorem laudantium
-              laborum, dolore dolores, vero quod tenetur voluptates vitae velit
-              ratione non molestiae, tempore eius.
-            </p>
-          </mat-card-content>
-        </mat-card>
         <router-outlet></router-outlet>
       </div>
 
