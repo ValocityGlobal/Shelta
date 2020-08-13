@@ -1,21 +1,38 @@
-<button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
-  <mat-icon class="close-icon">close</mat-icon>
-</button>
-<h1 mat-dialog-title>{{ data.name }}</h1>
-<div mat-dialog-content class="pop-up-address">
-  {{ data.fullAddress }}
-</div>
-<br />
-<div mat-dialog-content class="pop-up-content">
-  <strong>Phone: </strong>
-  {{ data.phoneNumber }}
-</div>
-<br />
-<div mat-dialog-content class="pop-up-content">
-  <strong>Hours: </strong>
-  {{ data.operationHours }}
-</div>
-<br />
-<div mat-dialog-content class="pop-up-content">
-  {{ data.description }}
+<div class="popup-wrapper">
+  <button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+  <h1 mat-dialog-title>{{ data.name }}</h1>
+  <hr />
+  <div mat-dialog-content class="pop-up-address">
+    <strong><mat-icon inline>place</mat-icon>Address: </strong>
+    {{ data.fullAddress ? data.fullAddress : "N/A" }}
+  </div>
+  <br />
+  <div mat-dialog-content class="pop-up-content">
+    <strong><mat-icon inline>call</mat-icon> Phone: </strong>
+    {{ data.phoneNumber ? data.phoneNumber : "N/A" }}
+  </div>
+  <br />
+  <div mat-dialog-content class="pop-up-content">
+    <strong><mat-icon inline>watch_later</mat-icon> Hours: </strong>
+    {{ data.operationHours ? data.operationHours : "N/A" }}
+  </div>
+  <br />
+  <div mat-dialog-content class="pop-up-content">
+    {{ data.description }}
+  </div>
+  <br />
+  <hr />
+  <div mat-dialog-content class="pop-up-content">
+    <em>
+      You can find more info on
+      <strong>{{ data.name }}'s website </strong>
+    </em>
+    <br />
+    <br />
+    <a mat-raised-button color="primary" href="{{ data.URL }}" target="_blank">
+      Visit Website <mat-icon inline>open_in_new</mat-icon>
+    </a>
+  </div>
 </div>
