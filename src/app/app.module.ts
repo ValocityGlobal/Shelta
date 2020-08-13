@@ -18,6 +18,7 @@ import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { MapService } from './services/map.service';
 import { DataService } from './services/data-service.service';
+import { CrisisHelplineComponent } from './components/crisis-helpline/crisis-helpline.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DataService } from './services/data-service.service';
     HeaderComponent,
     MapComponent,
     PopupComponent,
-    WelcomePopupComponent
+    WelcomePopupComponent,
+    CrisisHelplineComponent
   ],
   imports: [
     BrowserModule,

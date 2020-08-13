@@ -27,20 +27,11 @@
       <mat-radio-button value="5"><mat-icon>local_laundry_service</mat-icon> Laundry Service</mat-radio-button>
     </mat-radio-group>
 
-    <!-- Helpline Contect -->
-    <div style="margin-top: 5rem;">
-      <p>
-          <strong>Suicide Crisis Helpline</strong><br>
-          <a target="_blank" href="https://www.lifeline.org.nz">https://www.lifeline.org.nz</a>​
-      </p>
-      <p>
-          0508 TAUTOKO/0508 828 865​​<br>
-          Suicide Helpline - available 24/7
-      </p>
-    </div>
+    <app-crisis-helpline></app-crisis-helpline>
+
   </mat-drawer>
 
-   
+
   <mat-drawer-content>
     <div class="main-wrapper">
       <app-header [drawer]="drawer"></app-header>
