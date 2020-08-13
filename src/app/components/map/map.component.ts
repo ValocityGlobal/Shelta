@@ -31,8 +31,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
 
     this.map = L.map('map', {
-      // Auckland center: [-36.848701, 174.763873]
-      center: [-41.1346502,174.8383448],
+      center: [-36.848701, 174.763873],
       zoom: 14,
     });
 
@@ -51,17 +50,16 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     OSM.addTo(this.map);
 
-
     // fetching geojson data
     this.dataService.getProperty().subscribe((data) => {
-      
+
       var Beds = L.geoJSON(data, {
         pointToLayer: function (feature, latlng) {return L.marker(latlng, {icon: bed_icon})},
         onEachFeature: function (feature, layer) {layer.bindPopup(
         '<b>' + 
         'Name:' + feature.properties.Name + 
         '</b><br>' + 
-        'Cost: ' + feature.properties.Cost.Amount);
+        'Adress: ' + feature.properties.Address.FullAddress);
         }
       }).addTo(this.map);
 
@@ -69,13 +67,13 @@ export class MapComponent implements OnInit, AfterViewInit {
       const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
       L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
 
-      //geolocation of the user
-      this.map.locate({setView: true, maxZoom: 16});
-      this.map.on('locationfound', function(ev){
-        console.log(ev.latlng);
-        L.marker(ev.latlng);
-        L.circle(ev.latlng, ev.accuracy/2);
-      });
+      // //geolocation of the user
+      // this.map.locate({setView: true, watch: false})
+      // .on('locationfound', e => {
+      //   console.log(e.latlng);
+      //   L.marker(e.latlng);
+      //   L.circle(e.latlng, e.accuracy/2);
+      // });
 
     })
   }
