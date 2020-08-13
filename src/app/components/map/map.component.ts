@@ -1,6 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
+import { groupedLayers } from 'leaflet-groupedlayercontrol';
 import { DataService } from "../../services/data-service.service";
+import { merge } from 'rxjs';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -47,32 +50,36 @@ export class MapComponent implements OnInit, AfterViewInit {
       }
     );
 
+    //geolocation of the user
+    // this.map.locate({setView: true, watch: false}).on('locationfound', e => {
+    //   L.marker(e.latlng).addTo(this.map);
+    //   L.circle(e.latlng, e.accuracy/10).addTo(this.map);
+    // });
+
 
     OSM.addTo(this.map);
 
+    //merging all data sources into one 
+    const allMapData$ = merge(
+      this.dataService.getShelters(),
+      this.dataService.getFood()
+    );
 
     //fetching geojson data
-    this.dataService.getProperty().subscribe((data) => {
-
-      var Beds = L.geoJSON(data, {
+    allMapData$.subscribe(val => {
+      console.log(val)
+      var Shelters = L.geoJSON(val, {
         pointToLayer:  (feature, latlng) => {return L.marker(latlng, {icon: bed_icon})},
         onEachFeature:  (feature, layer) => {layer.bindPopup(
         '<b>' + 
         'Name:' + feature.properties.Name + 
-        '</b><br>' + 
-        'Adress: ' + feature.properties.Address.FullAddress);
+        '</b>');
         }
       }).addTo(this.map);
 
-      const overlayMaps = {"Beds": Beds};
+      const overlayMaps = {"Shelters": Shelters, "Food": Shelters};
       const BaseMaps = {"Open Street Map": OSM,"Esri Imagery": EsriWorldImagery};
       L.control.layers(BaseMaps, overlayMaps).addTo(this.map);
-
-      //geolocation of the user
-      this.map.locate({setView: true, watch: false}).on('locationfound', e => {
-        L.marker(e.latlng).addTo(this.map);
-        L.circle(e.latlng, e.accuracy/10).addTo(this.map);
-      });
 
     })
   }

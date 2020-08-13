@@ -4,103 +4,173 @@
       "type": "Feature",
       "properties": {
         "Name": "Auckland City Mission",
+		"URL": "https://www.aucklandcitymission.org.nz/what-we-do/homeless-services/",
         "Address": {
           "FullAddress": "23 Union Street, Auckland Central"
         },
-        "PhoneNumber": "09 3039200",
+        "PhoneNumber": "09 303 9200",
+		"Hours": "",
         "Email" : "info@aucklandcitymission.org.nz",
         "Categories": ["Shelters"],
-        "Description": "work with other agencies and support providers to reduce duplication of services and ensure the best possible outcomes for homeless clients."
+        "Description": "We work with other agencies and support providers to reduce duplication of services and ensure the best possible outcomes for homeless clients.Staff provide hospitality, support, social interaction and skills development, along with meeting physical needs and addressing long-term issues such as housing, physical and mental health concerns and financial issues."
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [174.756532, -36.852546]
+        "coordinates": [174.7544076, -36.8525163]
       }
     },
     {
         "type": "Feature",
         "properties": {
           "Name": "Emerge Aotearoa",
+		  "URL": "https://emergeaotearoa.org.nz/our-services/social-housing/",
           "Address": {
             "FullAddress": "103 Richardson Road, Mt Albert"
           },
-          "PhoneNumber": "0800 559 009 MSD",
-          "Email" : "info@jamesliston.co.nz",
+          "PhoneNumber": "0800 559 009",
+		  "Hours": "",
+          "Email" : "info@emergeaotearoa.org.nz",
           "Categories": ["Shelters"],
-          "Description": "in partnership with Lifewise to develop a tailored ‘Housing First’ model for central Auckland. ‘Housing First’ is an innovative and proven approach to housing people experiencing chronic homelessness."
+          "Description": "Emerge Aotearoa provides quality social housing that enable people and their whānau to fully participate within their community. Housing is provided to low income people who are eligible for social housing as determined by the Ministry of Social Development. In partnership with Lifewise to develop a tailored ‘Housing First’ model for central Auckland. ‘Housing First’ is an innovative and proven approach to housing people experiencing chronic homelessness."
         },
         "geometry": {
           "type": "Point",
-          "coordinates": [174.715251, -36.894722]
+          "coordinates": [174.7109169, -36.8946767]
         }
       },
       {
           "type": "Feature",
           "properties": {
-            "Name": "James Liston Emergency Housing Provider",
+            "Name": "James Liston Emergency Accommodation",
+			"URL": "http://www.awhina.net.nz/service/james-liston-emergency-accommodation/",
             "Address": {
               "FullAddress": "35 Howe St, Freemans Bay"
             },
             "PhoneNumber": "09 376 3885",
-            "Email" : "",
+			"Hours": "7 days from 8:30am - 9:00pm",
+            "Email" : "info@jamesliston.co.nz",
             "Categories": ["Shelters"],
-            "Description": "Emergency housing for up to 3 months to men and women who are homeless or at risk of being homeless. Staffed 24/7, $2 laundry, Breakfast & Dinner, along with providing safe clean accommodation, the hostel also provides support and case management services to residents. $88.00 per week for beneficiary, student, pensioner $250 per week non-beneficiary"
+            "Description": "Emergency housing for up to 3 months for men and women who are homeless or at risk of being homeless. Staffed 24/7, $2 laundry, Breakfast & Dinner, along with providing safe clean accommodation, the hostel also provides support and case management services to residents. $88.00 per week for beneficiary, student, pensioner $250 per week non-beneficiary"
           },
           "geometry": {
             "type": "Point",
-            "coordinates": [174.755146, -36.856942]
+            "coordinates": [174.7506924, -36.8569236]
           }
         },
         {
             "type": "Feature",
             "properties": {
               "Name": "Lifewise",
-              "Address": {
-                "FullAddress": "323 Queen Street - several addresses for services"
+              "URL": "https://www.lifewise.org.nz/services/community-services/family-services/youth-housing/",
+			  "Address": {
+                "FullAddress": "323 Queen Street"
               },
-              "PhoneNumber": "09 3025390",
+              "PhoneNumber": "09 302 5390",
+			  "Hours": "Mon - Fri: 9:00am - 5:00pm",			  
               "Email" : "lifewise@lifewise.org.nz",
               "Categories": ["Shelters"],
               "Description": "Youth housing service providing safe housing and support for youth who don’t have a safe or stable place to live. For 16-24-year-olds who either are homeless, at risk of becoming homeless or have a serious housing need."
             },
             "geometry": {
               "type": "Point",
-              "coordinates": [174.763012, -36.853803]
+              "coordinates": [174.7586601, -36.8537693]
             }
           },
           {
               "type": "Feature",
               "properties": {
                 "Name": "Vision West",
+				"URL": "http://www.visionwest.org.nz/housing",
                 "Address": {
-                  "FullAddress": "Building 7, 97 Glendale Road, Glen Eden"
+                  "FullAddress": "Building 13 - 97 Glendale Road, Glen Eden"
                 },
-                "PhoneNumber": "0800 559 009",
-                "Email" : "lifewise@lifewise.org.nz",
+                "PhoneNumber": "09 818 0706",
+			    "Hours": "",			  
+                "Email" : "Housing@visionwest.org.nz",
                 "Categories": ["Shelters"],
-                "Description": "Public funded housing"
+                "Description": "VisionWest Community Housing provides safe, quality, affordable rental accommodation for low income families who cannot access Government supplied accommodation and cannot afford private rental. We offer short term emergency housing and long term accommodation in Auckland"
               },
               "geometry": {
                 "type": "Point",
-                "coordinates": [174.648924, 36.917889]
+                "coordinates": [174.5787741, -36.9178201]
               }
             },
             {
                 "type": "Feature",
                 "properties": {
                   "Name": "YMCA",
+				  "URL": "https://www.ymcaaccommodation.org.nz",
                   "Address": {
                     "FullAddress": "150 Vincent Street"
                   },
                   "PhoneNumber": "09 379 6183",
-                  "Email" : "https://www.ymcaaccommodation.org.nz/contact",
+			      "Hours": "24 hour reception",			  
+                  "Email" : "",
                   "Categories": ["Shelters"],
-                  "Description": "City Lodge Auckland"
+                  "Description": "Hostel accommodation starting at $17 a night"
                 },
                 "geometry": {
                   "type": "Point",
                   "coordinates": [174.759448, -36.854553]
                 }
-              }
+            },
+			{
+                "type": "Feature",
+                "properties": {
+                  "Name": "The Salvation Army - Epsom Lodge Supportive Accommodation",
+                  "URL": "https://www.salvationarmy.org.nz/get-help/housing",
+				  "Address": {
+                    "FullAddress": "18 Margot Street, Epsom"
+                  },
+                  "PhoneNumber": "09 524 0252",
+			      "Hours": "",			  
+                  "Email" : "epsom_lodge@nzf.salvationarmy.org",
+                  "Categories": ["Shelters"],
+                  "Description": "Epsom Lodge provides 12 weeks emergency and transitional housing for men and women. Support and aftercare provided."
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [174.7738813, -36.8779387]
+                }
+            },	
+			{
+                "type": "Feature",
+                "properties": {
+                  "Name": "The Salvation Army - Glen Eden Housing for 55+",
+                  "URL": "https://www.salvationarmy.org.nz/get-help/housing/housing-over-55s",
+				  "Address": {
+                    "FullAddress": "425 West Coast Rd, Glen Eden"
+                  },
+                  "PhoneNumber": "04 382 0767",
+			      "Hours": "",			  
+                  "Email" : "",
+                  "Categories": ["Shelters"],
+                  "Description": "The Salvation Army has 283 accommodation units for those aged 55+ throughout New Zealand.  These units provide an essential service for the low income elderly.Please contact us about applying for one of these units."
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [174.6286023, -36.9090327]
+                }
+            },	
+			{
+                "type": "Feature",
+                "properties": {
+                  "Name": "The Salvation Army - Transitional Housing - Manurewa",
+                  "URL": "https://www.salvationarmy.org.nz/get-help/housing/transitional-housing",
+				  "Address": {
+                    "FullAddress": "28-30 Browns Rd, Manurewa"
+                  },
+                  "PhoneNumber": "09 953 8000",
+			      "Hours": "Mon - Fri: 8:30am - 5:00pm",			  
+                  "Email" : "paul_davidson@nzf.salvationarmy.org",
+                  "Categories": ["Shelters"],
+                  "Description": "Short term transitional housing available for men and women. If you need shelter and help to get your life back on track please contact us directly."
+                },
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [174.8823764, -37.0110592]
+                }
+            }					
+			
   ]
 }

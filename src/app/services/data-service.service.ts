@@ -17,7 +17,10 @@ export class DataService {
 
   constructor(private _http: HttpClient) {}
 
-  getProperty() {
+  getShelters() {
     return this._http.get('/assets/data/shelters.geojson', this.getHttpOptions);
+  }
+  getFood() {
+    return this._http.get('/assets/data/food.geojson', this.getHttpOptions);
   }
 }
