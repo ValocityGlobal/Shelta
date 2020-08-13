@@ -34,11 +34,11 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-- stage: DeployAPIToTest
-  displayName: Deploy API To Test
+- stage: DeployFrontEndToTest
+  displayName: Deploy Front End To Test
   jobs:
-  - deployment: DeployAPIToTest
-    displayName: Deploy API To Test
+  - deployment: DeployFrontEndToTest
+    displayName: Deploy Front End To Test
     pool:
       vmImage: 'Ubuntu-latest'
     # creates an environment if it doesn't exist
@@ -53,3 +53,22 @@ stages:
               scriptType: 'pscore'
               scriptLocation: 'inlineScript'
               inlineScript: 'az webapp config container set --name handup-fe-test --resource-group HandUp --docker-custom-image-name $(containerRegistry)/$(imageRepository):$(tag) --docker-registry-server-url $(containerRegistry)'
+- stage: DeployFrontEndTo Prod
+  displayName: Deploy Front End To Prod
+  jobs:
+  - deployment: DeployAPIToProd
+    displayName: Deploy Front End To Prod
+    pool:
+      vmImage: 'Ubuntu-latest'
+    # creates an environment if it doesn't exist
+    environment: 'Prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: 'Enterprise Dev/Test(5703323c-9abf-4b35-8634-0e8116df941d)'
+              scriptType: 'pscore'
+              scriptLocation: 'inlineScript'
+              inlineScript: 'az webapp config container set --name handup-fe --resource-group HandUp --docker-custom-image-name $(containerRegistry)/$(imageRepository):$(tag) --docker-registry-server-url $(containerRegistry)'
