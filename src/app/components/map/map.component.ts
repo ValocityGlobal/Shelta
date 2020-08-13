@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
-import { groupedLayers } from 'leaflet-groupedlayercontrol';
+// import { groupedLayers } from 'leaflet-groupedlayercontrol';
 import { DataService } from "../../services/data-service.service";
 import { merge } from 'rxjs';
 
