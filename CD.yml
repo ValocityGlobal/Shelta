@@ -53,10 +53,10 @@ stages:
               scriptType: 'pscore'
               scriptLocation: 'inlineScript'
               inlineScript: 'az webapp config container set --name handup-fe-test --resource-group HandUp --docker-custom-image-name $(containerRegistry)/$(imageRepository):$(tag) --docker-registry-server-url $(containerRegistry)'
-- stage: DeployFrontEndTo Prod
+- stage: DeployFrontEndToProd
   displayName: Deploy Front End To Prod
   jobs:
-  - deployment: DeployAPIToProd
+  - deployment: DeployFrontEndToProd
     displayName: Deploy Front End To Prod
     pool:
       vmImage: 'Ubuntu-latest'
