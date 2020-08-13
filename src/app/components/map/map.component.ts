@@ -34,8 +34,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     });
 
     this.map = L.map('map', {
-      // Auckland center: [-36.848701, 174.763873]
-      center: [-41.1346502, 174.8383448],
+      center: [-36.848701, 174.763873],
       zoom: 14,
     });
 
@@ -57,49 +56,52 @@ export class MapComponent implements OnInit, AfterViewInit {
       }
     );
 
+    //geolocation of the user
+    // this.map.locate({setView: true, watch: false}).on('locationfound', e => {
+    //   L.marker(e.latlng).addTo(this.map);
+    //   L.circle(e.latlng, e.accuracy/10).addTo(this.map);
+    // });
+
     OSM.addTo(this.map);
 
     // fetching geojson data
     var self = this;
-    this.dataService.getProperty().subscribe((data) => {
+    this.dataService.getShelters().subscribe((data) => {
       let propertyList = data['features'] as object[];
-      console.log('DATA: ', propertyList);
+      var Shelters = L.geoJSON(propertyList, {
+        pointToLayer: function (feature, latlng) {
+          return L.marker(latlng, { icon: bed_icon });
+        },
+        onEachFeature: function (feature, layer) {
+          layer.on({
+            click: function (e) {
+              // let operationHoursArr = e.target.feature.properties.Hours;
+              // let operationHoursCombined = '';
+              // operationHoursArr.forEach(x => {
+              //   operationHoursCombined += x.Day + ' ' + x.Hours.Open + '-' + x.Hours.Close + '. ';
+              // });
 
-      var Shelters = L.geoJSON(propertyList,
-          {
-            pointToLayer: function(feature, latlng) {
-              return L.marker(latlng, { icon: bed_icon });
-            },
-            onEachFeature: function(feature, layer) {
-              layer.on({
-                click: function (e) {
-                  let operationHoursArr = e.target.feature.properties.OperationHours;
-                  let operationHoursCombined = '';
-                  operationHoursArr.forEach(x => {
-                    operationHoursCombined += x.Day + ' ' + x.Hours.Open + '-' + x.Hours.Close + '. ';
-                  });
-
-                  self.dialog.open(PopupComponent,
-                    {
-                      width: '350px',
-                      data: {
-                        name: e.target.feature.properties.Name,
-                        fullAddress: e.target.feature.properties.Address.FullAddress,
-                        phoneNumber: e.target.feature.properties.PhoneNumber,
-                        operationHours: operationHoursCombined,
-                        description: e.target.feature.properties.Description
-                      },
-                      position: {
-                        top: e.containerPoint.y.toString() + 'px',
-                        left: e.containerPoint.x.toString() + 'px'
-                      }
-                    });
-                }
+              self.dialog.open(PopupComponent, {
+                width: '350px',
+                data: {
+                  name: e.target.feature.properties.Name,
+                  fullAddress: e.target.feature.properties.Address.FullAddress,
+                  phoneNumber: e.target.feature.properties.PhoneNumber,
+                  operationHours: e.target.feature.properties.Hours,
+                  description: e.target.feature.properties.Description,
+                  URL: e.target.feature.properties.URL,
+                },
+                // position: {
+                //   top: e.containerPoint.y.toString() + 'px',
+                //   left: e.containerPoint.x.toString() + 'px'
+                // }
               });
-            }
-          })
-        .addTo(this.map);
+            },
+          });
+        },
+      }).addTo(this.map);
 
+      // const overlayMaps = {"Shelters": Shelters, "Food": Shelters};
       const overlayMaps = { Shelters: Shelters };
       const BaseMaps = {
         'Open Street Map': OSM,
@@ -114,8 +116,9 @@ export class MapComponent implements OnInit, AfterViewInit {
       width: '350px',
       data: {
         welcomeTitle: 'Welcome!',
-        welcomeMessage: 'Click on the map pins to view additional information on the location including contact details and hours.'
-      }
+        welcomeMessage:
+          'Click on the map pins to view additional information on the location including contact details and hours.',
+      },
     });
   }
 }
