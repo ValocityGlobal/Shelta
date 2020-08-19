@@ -1,11 +1,11 @@
 {
   "name": "Handup.Web.Angular",
-  "dockerFile": "Dockerfile",
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "3.12" }
   },
-  "extensions": ["esbenp.prettier-vscode"],
-  "forwardPorts": [3000],
-  // "postCreateCommand": "yarn install",
-  "remoteUser": "node"
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/ash"
+  },
+  "extensions": ["esbenp.prettier-vscode", "angular.ng-template"]
 }

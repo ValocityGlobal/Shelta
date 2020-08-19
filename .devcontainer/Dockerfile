@@ -1,15 +1,10 @@
+# Update the VARIANT arg in devcontainer.json to pick an Alpine version: 3.10, 3.11, 3.12
 # To fully customize the contents of this image, use the following Dockerfile instead:
-# https://github.com/microsoft/vscode-dev-containers/tree/v0.112.0/containers/javascript-node-12/.devcontainer/Dockerfile
-FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-12
+# https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/alpine/.devcontainer/base.Dockerfile
+ARG VARIANT="3.12"
+FROM mcr.microsoft.com/vscode/devcontainers/base:0-alpine-${VARIANT} as dev-stage
 
-# See https://aka.ms/vscode-remote/containers/non-root-user for details.
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-ARG USERNAME=node
-
-# [Optional] Update UID/GID if needed
-RUN if [ "$USER_GID" != "1000" ] || [ "$USER_UID" != "1000" ]; then \
-    groupmod --gid $USER_GID $USERNAME \
-    && usermod --uid $USER_UID --gid $USER_GID $USERNAME \
-    && chown -R $USER_UID:$USER_GID /home/$USERNAME; \
-    fi
+RUN apk update
+RUN apk add --no-cache nodejs
+RUN apk add --no-cache yarn
+RUN yarn install 
