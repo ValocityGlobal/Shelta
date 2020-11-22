@@ -7,9 +7,9 @@ variables:
   buildConfiguration: 'Release'
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'valocity-global-container-registry'
+  dockerRegistryServiceConnection: 'valocityglobal-acr-1'
   imageRepository: 'handup.frontend'
-  containerRegistry: 'valocityglobalcontainers.azurecr.io'
+  containerRegistry: 'valocityglobalacr1.azurecr.io'
   dockerfilePath: './Dockerfile'
   tag: '$(Build.BuildNumber)-$(Build.SourceBranchName)'
 
