@@ -1,8 +1,23 @@
-<button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
+<div>
+  <button mat-icon-button class="pop-up-close-button" [mat-dialog-close]="true">
     <mat-icon class="close-icon">close</mat-icon>
   </button>
-  <h1 class="welcomeTitle" >{{ data.welcomeTitle }}</h1>
+  <h1 class="welcomeTitle" >Welcome!</h1>
   <div mat-dialog-content class="pop-up-content">
-    {{ data.welcomeMessage }}
+    Use this site to help identify where there are available beds for the night.
+    <br><br>
+    Alternatively, you can tap below to filter by food services as well as Employment services.
+    <br><br>
+    <a href="#" (click)="onClickAvailable()" role="button">Beds Available</a> <br>
+    <a href="#" (click)="onClickNotAvailable()" role="button">No Beds Available</a>
+    <br><br>
+    Tap the indicators above to view more information on the location. <br><br>
+    Contact the shelter to confirm availability as we can't guarantee the status is accurate.
   </div>
+  <br>
+  <div>
+    <button mat-raised-button class="button-close float-right" color="primary" [mat-dialog-close]="true" type="submit">OK, Got it!</button>
+  </div>
+</div>
+
   
