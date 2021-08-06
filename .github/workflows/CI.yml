@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Node
         uses: actions/setup-node@v2.4.0
+        
       # Runs a single command using the runners shell
       - name: Restore dependencies
         run: npm ci
@@ -34,9 +35,14 @@ jobs:
       - name: Audit
         run: npm audit --prod --audit-level=high
         
+      - name: lint
+        run: npm lint
+        
       - name: Build
-        run: ng build
+        run: npm build
+        
       - name: Test
-        run: ng test
-      - name: end to end tests
-        run: ng e2e
+        run: npm test
+        
+      - name: End to end tests
+        run: npm e2e
