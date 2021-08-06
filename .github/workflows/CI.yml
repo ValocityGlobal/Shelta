@@ -24,7 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Install Node
+        uses: actions/setup-node@v2.4.0
       # Runs a single command using the runners shell
       - name: Restore dependencies
         run: npm ci
