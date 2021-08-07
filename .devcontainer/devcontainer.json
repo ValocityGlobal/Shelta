@@ -5,7 +5,8 @@
     "args": { "VARIANT": "3.12" }
   },
   "settings": {
-    "terminal.integrated.shell.linux": "/bin/ash"
+    "terminal.integrated.,shell.linux": "$shell"
   },
+  "forwardPorts": [4200],
   "extensions": ["esbenp.prettier-vscode", "angular.ng-template"]
 }

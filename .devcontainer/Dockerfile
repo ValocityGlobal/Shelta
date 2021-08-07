@@ -1,10 +1,31 @@
-# Update the VARIANT arg in devcontainer.json to pick an Alpine version: 3.10, 3.11, 3.12
-# To fully customize the contents of this image, use the following Dockerfile instead:
-# https://github.com/microsoft/vscode-dev-containers/tree/v0.128.0/containers/alpine/.devcontainer/base.Dockerfile
-ARG VARIANT="3.12"
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-alpine-${VARIANT} as dev-stage
+FROM node:lts
+    
+# Configure apt
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+    && apt-get -y install --no-install-recommends apt-utils 2>&1
 
-RUN apk update
-RUN apk add --no-cache nodejs
-RUN apk add --no-cache yarn
-RUN yarn install 
+# Verify git and needed tools are installed
+RUN apt-get install -y git procps
+
+# Remove outdated yarn from /opt and install via package 
+# so it can be easily updated via apt-get upgrade yarn
+
+RUN rm -rf /opt/yarn-* \
+    && rm -f /usr/local/bin/yarn \
+    && rm -f /usr/local/bin/yarnpkg \
+    && apt-get install -y curl apt-transport-https lsb-release \
+    && curl -sS https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/pubkey.gpg | apt-key add - 2>/dev/null \
+    && echo "deb https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update \
+    && apt-get -y install --no-install-recommends yarn
+# Install the Angular CLI
+RUN npm install -g @angular/cli
+# Clean up
+RUN apt-get autoremove -y \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=dialog
+# Expose port 4200
+EXPOSE 4200
+# Set the default shell to bash instead of sh
