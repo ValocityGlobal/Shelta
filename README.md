@@ -14,6 +14,7 @@
 
 ```bash
 # yarn global add @angular/cli # This didnt work had to run the below with a --force after
+# note: these steps are no longer necessary - need confirmation of this from others
 npm install -g @angular/cli
 ng add @angular/material
 ng add @angular/pwa
@@ -30,7 +31,8 @@ To read
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --ssl` for a dev server. Navigate to `https://localhost:4200/`. The app will automatically reload if you change any of the source files.
+note: Chrome fails to launch non ssl site on localhost.   Using the --ssl to resolve this issue.
 
 ## Code scaffolding
 
