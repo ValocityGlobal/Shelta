@@ -1,12 +1,10 @@
 {
   "name": "Handup.Web.Angular",
   "build": {
-    "dockerfile": "Dockerfile",
-    "args": { "VARIANT": "3.12" }
+    "dockerfile": "Dockerfile"
   },
   "settings": {
-    "terminal.integrated.,shell.linux": "$shell"
+    "terminal.integrated.defaultProfile.linux": "bash"
   },
-  "forwardPorts": [4200],
   "extensions": ["esbenp.prettier-vscode", "angular.ng-template"]
 }
