@@ -1,15 +1,22 @@
 {
   "name": "Shelta Development",
   "build": {
-    "dockerfile": "Dockerfile",
-    "args": { "VARIANT": "3.12" }
+    "dockerfile": "../Dockerfile",
+    "target": "developer",
+    "context": ".."
   },
   "settings": {
-    "terminal.integrated.defaultProfile.linux": "zsh"
+    "terminal.integrated.profiles.linux": {
+      "ash": {
+        "path": "bin/ash"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "ash"
   },
   "extensions": [
-	"esbenp.prettier-vscode",
-	"angular.ng-template",
-	"shd101wyy.markdown-preview-enhanced",
-	"streetsidesoftware.code-spell-checker"]
+    "esbenp.prettier-vscode",
+    "angular.ng-template",
+    "shd101wyy.markdown-preview-enhanced",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }
