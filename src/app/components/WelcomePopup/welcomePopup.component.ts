@@ -10,4 +10,12 @@ export class WelcomePopupComponent {
   constructor(
     public dialogRef: MatDialogRef<WelcomePopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+    onClickAvailable(){
+      this.dialogRef.close(true);
+    }
+
+    onClickNotAvailable(){
+      this.dialogRef.close();
+    }
 }
