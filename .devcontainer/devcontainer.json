@@ -5,14 +5,6 @@
     "target": "developer",
     "context": ".."
   },
-  "settings": {
-    "terminal.integrated.profiles.linux": {
-      "ash": {
-        "path": "bin/ash"
-      }
-    },
-    "terminal.integrated.defaultProfile.linux": "ash"
-  },
   "extensions": [
     "esbenp.prettier-vscode",
     "angular.ng-template",
