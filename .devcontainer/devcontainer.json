@@ -1,10 +1,22 @@
 {
-  "name": "Handup.Web.Angular",
+  "name": "Shelta Development",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "../Dockerfile",
+    "target": "developer",
+    "context": ".."
   },
   "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
+    "terminal.integrated.profiles.linux": {
+      "ash": {
+        "path": "bin/ash"
+      }
+    },
+    "terminal.integrated.defaultProfile.linux": "ash"
   },
-  "extensions": ["esbenp.prettier-vscode", "angular.ng-template"]
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "angular.ng-template",
+    "shd101wyy.markdown-preview-enhanced",
+    "streetsidesoftware.code-spell-checker"
+  ]
 }
