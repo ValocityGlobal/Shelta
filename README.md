@@ -1,4 +1,4 @@
-# Handup
+# Shelta
 
 ## Getting started
 
