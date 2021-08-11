@@ -19,6 +19,6 @@ RUN ng build --prod
 
 FROM nginx:stable-alpine as production
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist/Handup /usr/share/nginx/html
+COPY --from=build /app/dist/Shelta /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
