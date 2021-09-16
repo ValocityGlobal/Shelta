@@ -2,13 +2,23 @@
   "name": "Shelta Development",
   "build": {
     "dockerfile": "../Dockerfile",
-    "target": "developer",
-    "context": ".."
+    "target": "developer"
+  },
+  "settings": {
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash"
+      }
+    }
   },
   "extensions": [
     "esbenp.prettier-vscode",
     "angular.ng-template",
     "shd101wyy.markdown-preview-enhanced",
     "streetsidesoftware.code-spell-checker"
+  ],
+  "forwardPorts": [
+    4200,
+    9876
   ]
 }

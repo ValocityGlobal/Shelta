@@ -6,16 +6,16 @@ RUN rm -rf /opt/yarn-* \
     && rm -f /usr/local/bin/yarn \
     && rm -f /usr/local/bin/yarnpkg
 RUN npm install --save-dev @angular-devkit/build-angular
-RUN npm install -g @angular/cli --force
+RUN npm install -g @angular/cli@12.1.1 --force
 
 FROM developer as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
-RUN npm audit --audit-level=high
+RUN npm audit
 RUN npm run lint
 COPY . .
-RUN ng build --prod
+RUN npm run build
 
 FROM nginx:stable-alpine as production
 COPY nginx.conf /etc/nginx/nginx.conf
