@@ -36,7 +36,7 @@ jobs:
         run: npm audit --prod --audit-level=high
         
       - name: Build
-        run: npm build
+        run: npm run build
       #commented out till we can get working in github pipelines  
       # - name: Test
       #   run: npm test
