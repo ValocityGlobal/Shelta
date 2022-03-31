@@ -5,6 +5,7 @@ RUN apk update \
 RUN rm -rf /opt/yarn-* \
     && rm -f /usr/local/bin/yarn \
     && rm -f /usr/local/bin/yarnpkg
+WORKDIR /app
 RUN npm install --save-dev @angular-devkit/build-angular
 RUN npm install -g @angular/cli@12.1.1 --force
 
