@@ -7,7 +7,7 @@ jobs:
   build-and-deploy:
       runs-on: ubuntu-latest
       env:
-        imageName: handup.frontend
+        imageName: shelta.frontend
       steps:
       # checkout the repo
       - name: 'Checkout GitHub Action'
